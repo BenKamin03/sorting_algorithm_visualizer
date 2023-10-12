@@ -1,0 +1,13 @@
+#container {
+    height: 200px;
+    display: flex;
+    align-items: flex-end;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: #101010;
+    color: white;
+}

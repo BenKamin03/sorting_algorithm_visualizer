@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Sorting Visualizer</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+
+<body>
+    <h1>SORTING VISUALIZER</h1>
+    <div id="container"></div>
+
+    <br>
+
+    <div style="text-align: center;">
+        <button onClick="playBubbleSort()">Bubble Sort</button>
+        <button onClick="playQuickSort()">Quick Sort</button>
+        <button onClick="playInsertionSort()">Insertion Sort</button>
+        <button onClick="playHeapSort()">Heap Sort</button>
+        <button onClick="playMergeSort()">Merge Sort</button>
+
+        <br>
+        <hr>
+
+        <button onClick="init()">Init Array</button>
+        <label for="array_size">Array Size:</label>
+        <input type="number" min="100" max="300" id="array_size" name="array_size" value="100">
+        
+        <div class="slidecontainer">
+            <label>Speed: </label>
+            <input type="range" min="0" max="100" value="50" class="slider" id="speed" style="transform: translateY(25%);" onClick="updateSpeed()">
+        </div>
+
+        <div class="slidecontainer">
+            <label>Volume: </label>
+            <input type="range" min="0" max="100" value="0" class="slider" id="volume" style="transform: translateY(25%);" onClick="updateVolume()">
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
