@@ -3,7 +3,7 @@ let width = 400;
 const array = [];
 let moves = [];
 let speed = 50;
-let volume;
+let volume = 50;
 
 let audioCtx = null;
 
