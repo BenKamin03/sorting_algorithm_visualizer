@@ -6,7 +6,7 @@
 </head>
 
 <body>
-    <h1>SORTING VISUALIZER</h1>
+    <h1 style="font-family: sans-serif; font-weight: 100;">SORTING VISUALIZER</h1>
     <div id="container"></div>
 
     <br>
@@ -21,19 +21,36 @@
         <br>
         <hr>
 
-        <button onClick="init()">Init Array</button>
-        <label for="array_size">Array Size:</label>
-        <input type="number" min="100" max="300" id="array_size" name="array_size" value="100">
-        
-        <div class="slidecontainer">
-            <label>Speed: </label>
-            <input type="range" min="0" max="100" value="50" class="slider" id="speed" style="transform: translateY(25%);" onClick="updateSpeed()">
-        </div>
+        <table style="margin-left: auto; margin-right: auto;">
+            <button onClick="init()">Init Array</button>
+            <button onClick="stop()">Stop</button>
+            <tr>
+                <th class="slidecontainer">
+                    <label>Size: </label>
+                </th>
+                <th style="width: 80%;">
+                    <input type="range" min="100" max="1000" value="100" class="slider" id="array_size" style="transform: translateY(25%);" onClick="init()">
+                </th>
+            </tr>
 
-        <div class="slidecontainer">
-            <label>Volume: </label>
-            <input type="range" min="0" max="100" value="0" class="slider" id="volume" style="transform: translateY(25%);" onClick="updateVolume()">
-        </div>
+            <tr>
+                <th class="slidecontainer">
+                    <label>Speed: </label>
+                </th>
+                <th>
+                    <input type="range" min="0" max="100" value="50" class="slider" id="speed" style="transform: translateY(25%);" onClick="updateSpeed()">
+                </th>
+            </tr>
+
+            <tr>
+                <th class="slidecontainer">
+                    <label>Volume: </label>
+                </th>
+                <th>
+                    <input type="range" min="0" max="100" value="0" class="slider" id="volume" style="transform: translateY(25%);" onClick="updateVolume()">
+                </th>
+            </tr>
+        </table>
 
     </div>
 

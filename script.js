@@ -3,7 +3,8 @@ let width = 400;
 const array = [];
 let moves = [];
 let speed = 50;
-let volume = 50;
+let volume = 0;
+let canChange = true;
 
 let audioCtx = null;
 
@@ -27,13 +28,15 @@ function playNote(freq) {
 }
 
 function init() {
-    n = document.getElementById("array_size").value;
-    for (let i = 0; i < n; i++) {
-        array[i] = (i + 1) / n;
-    }
+    if (canChange) {
+        n = document.getElementById("array_size").value;
+        for (let i = 0; i < n; i++) {
+            array[i] = (i + 1) / n;
+        }
 
-    shuffle(array);
-    showBars(array);
+        shuffle(array);
+        showBars(array);
+    }
 
 }
 
@@ -44,6 +47,12 @@ function isSorted(array) {
         }
     }
     return true;
+}
+
+function stop() {
+    canChange = true;
+    moves = [];
+    init();
 }
 
 function shuffle(array) {
@@ -108,7 +117,8 @@ function updateVolume() {
 }
 
 function playBubbleSort() {
-    if (!isSorted(array)) {
+    if (!isSorted(array) && canChange) {
+        canChange = false;
         updateSpeed()
         const copy = [...array];
         moves = [];
@@ -119,7 +129,8 @@ function playBubbleSort() {
 }
 
 function playQuickSort() {
-    if (!isSorted(array)) {
+    if (!isSorted(array) && canChange) {
+        canChange = false;
         updateSpeed()
         const copy = [...array];
         moves = [];
@@ -129,7 +140,8 @@ function playQuickSort() {
 }
 
 function playInsertionSort() {
-    if (!isSorted(array)) {
+    if (!isSorted(array) && canChange) {
+        canChange = false;
         updateSpeed()
         const copy = [...array];
         moves = [];
@@ -139,7 +151,8 @@ function playInsertionSort() {
 }
 
 function playHeapSort() {
-    if (!isSorted(array)) {
+    if (!isSorted(array) && canChange) {
+        canChange = false;
         updateSpeed()
         const copy = [...array];
         moves = [];
@@ -149,7 +162,8 @@ function playHeapSort() {
 }
 
 function playMergeSort() {
-    if (!isSorted(array)) {
+    if (!isSorted(array) && canChange) {
+        canChange = false;
         updateSpeed()
         const copy = [...array];
         moves = [];
@@ -161,8 +175,9 @@ function playMergeSort() {
 
 // Recursively goes through each swap and animates it
 function animate(moves) {
-    if (moves.length == 0) {
+    if (moves.length == 0 || canChange) {
         showBarsEnd(array);
+        canChange = true;
         return;
     }
 
