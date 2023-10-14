@@ -49,11 +49,12 @@ button:hover {
   appearance: none;
   width: 75%; /* Full-width */
   height: 5px; /* Specified height */
-  background: #d3d3d3; /* Grey background */
+  background: #505050; /* Grey background */
   outline: none; /* Remove outline */
-  opacity: 0.2; /* Set transparency (for mouse-over effects on hover) */
+  opacity: 70%; /* Set transparency (for mouse-over effects on hover) */
   -webkit-transition: 0.2s; /* 0.2 seconds transition on hover */
   transition: opacity 0.2s;
+  border-radius: 5px;
 }
 
 .slider:hover {
@@ -64,6 +65,7 @@ button:hover {
   appearance: none;
   width: 7px; /* Set a specific slider handle width */
   height: 7px; /* Slider handle height */
-  background: #04aa6d; /* Green background */
+  background: white; /* Green background */
   cursor: pointer; /* Cursor on hover */
+  border-radius: 5px;
 }
